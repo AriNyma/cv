@@ -1,13 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import CV from './CV';
 import reportWebVitals from './reportWebVitals';
 
+const card = [
+    { nimi: "Ari Nyman", osoite: "Hehkukuja 10, 65300 Vaasa", email: "ari.nyman@gmail.com", puh: "+358401766440"}
+   
+]
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <CV cards = {card}/>
   </React.StrictMode>
 );
 
