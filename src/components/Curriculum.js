@@ -1,12 +1,14 @@
 import React from 'react';
+import { Row, Col} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Row, Col } from 'react-bootstrap';
-import '../CV.css';
+import { Container } from 'react-bootstrap';
 import NavigationBar from './NavigationBar';
 import Footer from './Footer';
 import CvCard from './CvCard';
 
+
 function Curriculum(props) {
+    const { links } = props;
     return (
         <div className="d-flex flex-column min-vh-100">
         <NavigationBar />
@@ -14,12 +16,12 @@ function Curriculum(props) {
             <Row>
                 {props.cards.map((card, index) => ( 
                     <Col key={index}>
-                    <CvCard />
+                    <CvCard cards = {card} />
                     </Col>
                 ))}
             </Row>
         </Container> 
-        <Footer />
+        <Footer links = {links}/>
         </div>
     );
 }

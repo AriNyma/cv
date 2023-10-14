@@ -1,14 +1,14 @@
-import { Card, Button } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 
 function CvCard(props) {
+    
     return (
-        <Card style={{ minWidth: '18rem', margin: '20px' }}>
-        <Card.Img variant="top" src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" />
-        <Card.Body>
-            <Card.Title>Example Card</Card.Title>
-            <Card.Text>This is an example React card</Card.Text>
-            <Button variant="primary">Example Button</Button>
-        </Card.Body>
+        <Card style={{ minWidth: '18rem', minHeight: '18rem', margin: '20px',  backgroundImage: `url(${props.cards.image})`, backgroundPosition: 'top', backgroundSize: '100%', backgroundRepeat: 'no-repeat'}}>
+            <Card.Body>
+                <Card.Title>{props.cards.title}</Card.Title>
+                <Card.Text>{props.cards.info}</Card.Text>
+                {props.cards.button}
+            </Card.Body>
         </Card>
     );
 }
