@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: black;
 }
 
 code {
@@ -19,5 +20,18 @@ code {
 .grid {
     display: grid;
     gap: 1rem;
+}
+  
+.rating {
+    display: flex;
+    justify-content: left;
+}
+  
+.star-filled {
+    color: gold; 
+}
+  
+.star-empty {
+    color: #ccc;
 }
 

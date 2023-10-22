@@ -6,7 +6,6 @@ import NavigationBar from './NavigationBar';
 import Footer from './Footer';
 import CvCard from './CvCard';
 
-
 function Curriculum(props) {
     const { links } = props;
     return (
@@ -15,8 +14,8 @@ function Curriculum(props) {
         <Container className="mt-5">
             <Row>
                 {props.cards.map((card, index) => ( 
-                    <Col key={index}>
-                    <CvCard cards = {card} />
+                    <Col key={index} >
+                        <CvCard cards = {card} />
                     </Col>
                 ))}
             </Row>

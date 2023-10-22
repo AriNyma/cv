@@ -3,22 +3,27 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import Curriculum from './components/Curriculum';
 import { Button } from 'react-bootstrap';
+import omakuva from './images/Omakuva.png'
+import Rating from './components/rating';
 
 const card = [
-    { image: "https://firebasestorage.googleapis.com/v0/b/react-cv-ae862.appspot.com/o/omakuva.png?alt=media&token=b5952b63-ac84-495f-a164-9cb819a399cb&_gl=1*1hm1xsl*_ga*NjE0NzMxMzM5LjE2OTYyNDkzNjI.*_ga_CW55HF8NVT*MTY5NzE5NzEzMy40LjEuMTY5NzE5ODM1OS4yNC4wLjA.", title: "", info: "", button: "" },
-    { image: "", title: "Bio", info: "41 year old Civil enginer turned IT-enginer. Married with one 4 year old at home", button: "" },
-    { image: "", title: "Quick facts", info: "", button: "" },
-    { image: "", title: "Skills", info: "", button: <Button variant="primary">More</Button> },
-    { image: "", title: "Work merits", info: "Spent the past 14 years developing 19 different multi appartement buildings in Vaasa and Oulu area", button: "" }  
+    { image: omakuva},
+    { title: "Bio", infoFirst: "41 year old Civil enginer turned IT-enginer. Married with one 4 year old at home.", infoSecond :"I have worked in various roles in the construction industry, acquiring extensive experience and skills along the way. I'm motivated, hardworking, and ready to take on new challenges. I enjoy teamwork. "},
+    { title: "Quick facts", infoFirst: "Rank of lieutenant in the Finnish reserve forces", infoSecond: "RAP-qualifications (FISE) in construction", infoThird: "Second year of IT-studies ongoing"},
+    { title: "Skills", infoFirst: "React", ratingFirst: <Rating value = {3}/>, infoSecond: "C", ratingSecond: <Rating value = {5}/>, infoThird: "Cisco Networks", ratingThird: <Rating value = {5}/>, button: <Button variant="primary">More</Button> },
+    { title: "Work merits", infoFirst: "Hve been working for the past 14 years in Lakea developing 19 construction projects in Vaasa and Oulu area.", infoSecond: "Before joining Lakea Oy, I worked for 3 years in site supervision and as a site foreman in various industrial construction and renovation projects." , infoThird: "During my time at Lakea Oy, I have worked as a Project Manager in several different service apartment projects as well as residential building projects. These projects have ranged from residential real estate development, ARA-projects to Lakea's own financing models, and the contract types have in-cluded traditional, shared, and turnkey contracts. These projects have also included wooden apartment construction using Lakea's 'Sydänpuu' -concept. In addition to my role as a Project Manager, I have served as a site supervisor on several sites.", button: "" }  
 ];
-const link = [
-    {facebook: "https://www.google.com", linkdin: "", instagram: ""}
-];
+
+const link = {
+    facebook: "https://www.facebook.com/ari.nyman", 
+    linkedin: "https://www.linkedin.com/in/ari-pekka-nyman", 
+    instagram: "https://www.instagram.com/ari.nyman/?igshid=OGQ5ZDc2ODk2ZA%3D%3D"
+};
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
-        <Curriculum cards = {card} links ={link}/>
+        <Curriculum cards = {card} links ={link} />
     </React.StrictMode>
 );
 
