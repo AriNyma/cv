@@ -13,20 +13,12 @@ code {
     monospace;
 }
 
-.container{
-    display: flex;
-}
-
 .grid {
     display: grid;
     gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
 }
-  
-.rating {
-    display: flex;
-    justify-content: left;
-}
-  
+ 
 .star-filled {
     color: gold; 
 }
@@ -34,4 +26,9 @@ code {
 .star-empty {
     color: #ccc;
 }
+
+.star {
+    font-size: 30px;
+}
+
 

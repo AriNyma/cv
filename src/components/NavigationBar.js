@@ -1,5 +1,6 @@
 import { Navbar, NavDropdown, Nav, Container} from 'react-bootstrap';
 
+//navdropdown for future improvements to separate my Civil enginerin from IT
 function NavigationBar() {
     return (
         <Navbar collapseOnSelect expand="sm">
@@ -8,7 +9,7 @@ function NavigationBar() {
                 <Navbar.Toggle aria-controls="navbar-toggle" />
                 <Navbar.Collapse id="navbar-toggle">
                 <Nav className="me-auto">
-                    <NavDropdown title="Field" id="nav-dropdown">
+                    <NavDropdown title="Field" id="nav-dropdown"> 
                         <NavDropdown.Item >Information Technology (under construction)</NavDropdown.Item>
                         <NavDropdown.Item >Civil Enginering (under construction)</NavDropdown.Item>
                     </NavDropdown>
