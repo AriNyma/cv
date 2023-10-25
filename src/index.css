@@ -1,24 +1,10 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: black;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
 .grid {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    gap: 1rem; 
+    height: calc(100% - 15px);
+    margin-bottom: 15px;    
 }
- 
+
 .star-filled {
     color: gold; 
 }
@@ -28,7 +14,7 @@ code {
 }
 
 .star {
-    font-size: 30px;
+    font-size: 20px;
 }
 
 

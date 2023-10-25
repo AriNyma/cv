@@ -3,7 +3,7 @@ import { Navbar, NavDropdown, Nav, Container} from 'react-bootstrap';
 //navdropdown for future improvements to separate my Civil enginerin from IT
 function NavigationBar() {
     return (
-        <Navbar collapseOnSelect expand="sm">
+        <Navbar collapseOnSelect expand="sm" className="bg-info">
             <Container>
                 <Navbar.Brand>Ari Nyman</Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbar-toggle" />

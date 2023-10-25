@@ -3,7 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 function Footer(props){
 
     return (
-        <div className="bg-secondary mt-auto">
+        <div className="bg-info mt-auto">
             <Container className="p-3">
             <Row>
                 <p className="text-center text-white">Follow me on social media:</p>

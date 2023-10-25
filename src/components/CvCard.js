@@ -4,143 +4,126 @@ import { Button } from 'react-bootstrap';
 
 
 function CvCard(props) {
-  const [activeSkill, setActiveSkill] = useState(null);
+    const [activeSkill, setActiveSkill] = useState(null);
 
-  const toggleExplanation = (skill) => {
-    if (activeSkill === skill) {
-      setActiveSkill(null);
-    } else {
-      setActiveSkill(skill);
-    }
-  };
+    const toggleExplanation = (skill) => {
+        if (activeSkill === skill) {
+            setActiveSkill(null);
+        } else {
+            setActiveSkill(skill);
+        }
+    };
 
-  return (
-    <Card style={{ minWidth: '18rem', minHeight: '18rem', backgroundColor: "lightgrey"}}>
-      <Card.Body>
-        <Card.Text>
-          {props.cards.map((card) => {
-            if (card.type === props.type) {
-              return (
-                <div key={props.type}>
-                  {props.type === 'picture' && (
-                    <img src={card.image} alt="Profile" style={{ width: '100%' }}/>
-                  )}
-                  
-                  {props.type === 'bio' && (
-                    <div>
-
+    return (
+        <Card class= "h-100 bg-light" style={{ minWidth: '18rem', minHeight: '18rem'}}>
+        <Card.Body>
+            <Card.Text>
+            {props.cards.map((card) => {
+                if (card.type === props.type) {
+                return (
+                    <div key={props.type}>
+                    {props.type === 'picture' && (
+                        <img src={card.image} alt="Profile" style={{ width: '100%'}}/>
+                    )}
+                    
+                    {props.type === 'bio' && (
+                        <div>
                             <h1>{card.title}</h1>
                             <p>{card.infoFirst}</p>
                             <p>{card.infoSecond}</p>
+                        </div>
+                    )}
 
-                    </div>
-                  )}
-                  {props.type === 'quick-facts' && (
-                    <div>
+                    {props.type === 'quick-facts' && (
+                        <div>
+                            <h1>{card.title}</h1>
+                            <ul>
+                                <li>{card.infoFirst}</li>
+                                <li>{card.infoSecond}</li>
+                                <li>{card.infoThird}</li>
+                            </ul>
+                        </div>
+                    )}
 
+                    {props.type === 'skills' && (
+                        <div>
                         <h1>{card.title}</h1>
-                        <ul>
-                            <li>{card.infoFirst}</li>
-                            <li>{card.infoSecond}</li>
-                            <li>{card.infoThird}</li>
-                        </ul>
+                        <div className="d-grid gap-2">
+                            <p></p>
+                            <Button 
+                            onClick={() => toggleExplanation(card.ratingFirst)}
+                            variant='info'
+                            >
+                                {activeSkill === card.ratingFirst
+                                    ? <p>{card.infoFirst}{card.ratingFirst}{activeSkill === card.ratingFirst && (<p>{card.explanationFirst}</p>)}</p> 
+                                    : <p>{card.infoFirst}{card.ratingFirst}</p>
+                                }  
+                            </Button>
+                            
+                            
+                        </div>
 
-                    </div>
-                  )}
-                  {props.type === 'skills' && (
-                    <div>
-                      <h1>{card.title}</h1>
-                      <p>{card.infoFirst}</p>
-                      <div>
-                        <Button
-                          onClick={() => toggleExplanation(card.ratingFirst)}
-                          class="btn btn-light"
-                        >
-                          {activeSkill === card.ratingFirst
-                            ? 
-                                <p>{card.ratingFirst}</p>
-                               : 
-                                <p>{card.ratingFirst}</p>
-                              }  
-                        </Button>
-                        {activeSkill === card.ratingFirst && (
-                          <p>{card.explanationFirst}</p>
-                        )}
-                        
-                      </div>
+                        <div className="d-grid gap-2"> 
+                            <p></p>  
+                            <Button
+                            onClick={() => toggleExplanation(card.ratingSecond)}
+                            variant='info'
+                            >
+                                {activeSkill === card.ratingSecond
+                                    ? <p>{card.infoSecond}{card.ratingSecond}{activeSkill === card.ratingSecond && (<p>{card.explanationSecond}</p>)}</p> 
+                                    : <p>{card.infoSecond}{card.ratingSecond}</p>
+                                }
+                            </Button>
+                            
+                        </div>
 
-                      <p>{card.infoSecond}</p>
-                      <div>   
-                        <Button
-                          onClick={() => toggleExplanation(card.ratingSecond)}
-                          class="btn btn-light"
-                        >
-                          {activeSkill === card.ratingSecond
-                            ? 
-                                <p>{card.ratingSecond}</p>
-                                : 
-                                <p>{card.ratingSecond}</p>
-                              }
-                        </Button>
-                        {activeSkill === card.ratingSecond && (
-                          <p>{card.explanationSecond}</p>
-                        )}
-                      </div>
+                        <p></p>
+                        <div className="d-grid gap-2">
+                            <Button
+                            onClick={() => toggleExplanation(card.ratingThird)}
+                            variant='info'
+                            >
+                                {activeSkill === card.ratingThird
+                                    ? <p>{card.infoThird}{card.ratingThird}{activeSkill === card.ratingThird && (<p>{card.explanationThird}</p>)}</p> 
+                                    : <p>{card.infoThird}{card.ratingThird}</p>
+                                }
+                            </Button>
+                            
+                        </div>
 
-                      <p>{card.infoThird}</p>
-                      <div>
-                        <Button
-                          onClick={() => toggleExplanation(card.ratingThird)}
-                          class="btn btn-light"
-                        >
-                          {activeSkill === card.ratingThird
-                            ? 
-                                <p>{card.ratingThird}</p>
-                                : 
-                                <p>{card.ratingThird}</p>
-                              }
-                        </Button>
-                        {activeSkill === card.ratingThird && (
-                          <p>{card.explanationThird}</p>
-                        )}
-                      </div>
+                        <p></p>
+                        <div className="d-grid gap-2">
+                            <Button  
+                            onClick={() => toggleExplanation(card.ratingFourth)}
+                            variant='info'
+                            >
+                                {activeSkill === card.ratingFourth 
+                                ? <p>{card.infoFourth}{card.ratingFourth}{activeSkill === card.ratingFourth && (<p>{card.explanationFourth}</p>)}</p> 
+                                : <p>{card.infoFourth}{card.ratingFourth}</p>
+                                }
+                            </Button>
+                            
+                        </div>
+                        </div>
+                    )}
 
-                      <p>{card.infoFourth}</p>
-                      <div>
-                        <Button
-                          onClick={() => toggleExplanation(card.ratingFourth)}
-                          class="btn btn-light"
-                        >
-                          {activeSkill === card.ratingFourth 
-                          ? 
-                                <p>{card.ratingFourth}</p>
-                                : 
-                                <p>{card.ratingFourth}</p>
-                          }
-                        </Button>
-                        {activeSkill === card.ratingFourth && (
-                          <p>{card.explanationFourth}</p>
-                        )}
-                      </div>
-                    </div>
-                  )}
-                  {props.type === 'work-merits' && (
-                    <div>
+                    {props.type === 'work-merits' && (
+                        <div>
                             <h1>{card.title}</h1>
                             <p>{card.infoFirst}</p>
                             <p>{card.infoSecond}</p>
                             <p>{card.infoThird}</p>
+                        </div>
+                    )}
                     </div>
-                  )}
-                </div>
-              );
-            }
-            return null;
-          })}
-        </Card.Text>
-      </Card.Body>
-    </Card>
-  );
+                );
+                }
+                return null;
+            })}
+            </Card.Text>
+        </Card.Body>
+        </Card>
+    );
 }
 
 export default CvCard;

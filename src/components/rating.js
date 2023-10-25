@@ -8,9 +8,7 @@ const Rating = ({ value, onClick = () => {} }) => {
           key={i}
           className={`star ${i <= value ? 'star-filled' : 'star-empty'}`}
           onClick={onClick}
-        >
-          ★
-        </span>
+        > ★ </span>
       );
     }
     return <div>{stars}</div>;
