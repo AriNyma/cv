@@ -15,7 +15,8 @@ function CvCard(props) {
     };
 
     return (
-        <Card class= "h-100 bg-light" style={{ minWidth: '18rem', minHeight: '18rem'}}>
+        <Card className= {`cv-card ${props.isDarkMode ? 'bg-dark text-light' : 'bg-light text-dark'}`} style={{ width: '100%',
+         minWidth: '18rem', minHeight: '18rem' }}>
         <Card.Body>
             <Card.Text>
             {props.cards.map((card) => {
@@ -52,7 +53,7 @@ function CvCard(props) {
                             <p></p>
                             <Button 
                             onClick={() => toggleExplanation(card.ratingFirst)}
-                            variant='info'
+                            variant={props.isDarkMode ? 'outline-light' : 'outline-info'}
                             >
                                 {activeSkill === card.ratingFirst
                                     ? <p>{card.infoFirst}{card.ratingFirst}{activeSkill === card.ratingFirst && (<p>{card.explanationFirst}</p>)}</p> 
@@ -67,7 +68,7 @@ function CvCard(props) {
                             <p></p>  
                             <Button
                             onClick={() => toggleExplanation(card.ratingSecond)}
-                            variant='info'
+                            variant={props.isDarkMode ? 'outline-light' : 'outline-info'}
                             >
                                 {activeSkill === card.ratingSecond
                                     ? <p>{card.infoSecond}{card.ratingSecond}{activeSkill === card.ratingSecond && (<p>{card.explanationSecond}</p>)}</p> 
@@ -81,7 +82,7 @@ function CvCard(props) {
                         <div className="d-grid gap-2">
                             <Button
                             onClick={() => toggleExplanation(card.ratingThird)}
-                            variant='info'
+                            variant={props.isDarkMode ? 'outline-light' : 'outline-info'}
                             >
                                 {activeSkill === card.ratingThird
                                     ? <p>{card.infoThird}{card.ratingThird}{activeSkill === card.ratingThird && (<p>{card.explanationThird}</p>)}</p> 
@@ -95,7 +96,7 @@ function CvCard(props) {
                         <div className="d-grid gap-2">
                             <Button  
                             onClick={() => toggleExplanation(card.ratingFourth)}
-                            variant='info'
+                            variant={props.isDarkMode ? 'outline-light' : 'outline-info'}
                             >
                                 {activeSkill === card.ratingFourth 
                                 ? <p>{card.infoFourth}{card.ratingFourth}{activeSkill === card.ratingFourth && (<p>{card.explanationFourth}</p>)}</p> 

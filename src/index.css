@@ -1,8 +1,28 @@
+.light-mode {
+    background-color: white;
+    color: black;
+}
+  
+  .dark-mode {
+    background-color: #333;
+    color: white;
+}
+
+.custom-dropdown-title.text-light {
+    color: white;
+  }
+
 .grid {
     display: flex;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem; 
-    height: calc(100% - 15px);
-    margin-bottom: 15px;    
+    margin-bottom: 15px;  
+    justify-content: center; 
+}
+
+.cv-card {
+    flex-grow: 1;
 }
 
 .star-filled {
