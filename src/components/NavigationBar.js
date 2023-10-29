@@ -1,23 +1,24 @@
 import React from 'react';
 import { Navbar, NavDropdown, Nav, Container, Form } from 'react-bootstrap';
+import styled from 'styled-components';
 
 function NavigationBar({ isDarkMode, toggleDarkMode }) {
   const navbarBackground = isDarkMode ? 'dark' : 'info';
-  const textColor = isDarkMode ? 'light' : 'dark';
   const switchLabel = isDarkMode ? 'Light Mode' : 'Dark Mode';
 
+  
   return (
-    <Navbar collapseOnSelect expand="sm" className={`bg-${navbarBackground}`}>
-      <Container>
-        <Navbar.Brand className={`text-${textColor}`}>Ari Nyman</Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbar-toggle" />
+    <Navbar collapseOnSelect expand="sm" className={`bg-${navbarBackground}`} >
+      <Container >
+        <Navbar.Brand style={{ color : 'white'}}>Ari Nyman</Navbar.Brand>
+        <Navbar.Toggle aria-controls="navbar-toggle"/>
         <Navbar.Collapse id="navbar-toggle">
-          <Nav className={`me-auto ${textColor}`}>
-            <NavDropdown title="Field" id="nav-dropdown" className={`custom-dropdown-title text-${textColor}`}>
+          <Nav className={`me-auto`}>
+          <NavDropdown title={<span style={{ color : 'white'}}>Field</span>} id="nav-dropdown">
               <NavDropdown.Item>Information Technology (under construction)</NavDropdown.Item>
               <NavDropdown.Item>Civil Engineering (under construction)</NavDropdown.Item>
             </NavDropdown>
-            <NavDropdown title="Projects" id="nav-dropdown" className={`custom-dropdown-title text-${textColor}`}>
+            <NavDropdown title={<span style={{ color : 'white'}}>Projects</span>} id="nav-dropdown">
               <NavDropdown.Item>Information Technology (under construction)</NavDropdown.Item>
               <NavDropdown.Item>Civil Engineering (under construction)</NavDropdown.Item>
             </NavDropdown>

@@ -8,10 +8,6 @@
     color: white;
 }
 
-.custom-dropdown-title.text-light {
-    color: white;
-  }
-
 .grid {
     display: flex;
     flex-wrap: wrap;

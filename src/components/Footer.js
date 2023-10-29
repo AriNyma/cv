@@ -4,7 +4,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 function Footer(props) {
   return (
     <div className={`bg-${props.isDarkMode ? 'dark' : 'info'} mt-auto text-${props.isDarkMode ? 'light' : 'dark'}`}>
-      <Container className="p-3">
+      <Container className="p-5">
         <Row>
           <p className="text-center">{props.isDarkMode ? 'Follow me on social media:' : 'Follow me on social media:'}</p>
           <Col className="text-center">
